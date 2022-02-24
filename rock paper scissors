@@ -1,0 +1,68 @@
+// Goal: To create the game Rock, Paper, Scissors.
+// Step 1: create a function and declare the user and their input
+// Step 2: Utilize toLowerCase(); in order to asses users input.
+
+
+
+function getUserChoice (userInput){
+    userInput = userInput.toLowerCase();
+   if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors')
+       return userInput
+}
+
+// Step 3: Create a function and declare the computer and their input
+
+function getComputerChoice (){
+ const randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber === 0){
+        return 'rock'
+    } else if (randomNumber === 1){
+       return 'paper'
+    }  else if (randomNumber === 2){
+       return 'scissors'
+    } 
+
+}
+
+// Step 4: Determine a winner by comparing two choices in order to who wins, lost, or ends in a draw. 
+
+function determineWinner (userChoice,computerChoice){
+    if(userChoice === computerChoice){
+        console.log('DRAW');
+      } 
+        if (userChoice === 'rock'){
+        if (computerChoice === 'paper'){
+            console.log('Computer WINS!');
+        } else if (computerChoice === 'scissors'){
+            console.log('You WIN!');
+        }
+        } 
+        if (userChoice === 'paper'){
+            if (computerChoice === 'scissors'){
+                console.log('Computer WINS!');
+            } else if (computerChoice === 'rock'){
+                console.log('You WIN!');}
+                
+        }
+             if (userChoice === 'scissors'){
+                if (computerChoice === 'rock'){
+                    console.log('Computer WINS!');
+
+                } else if (computerChoice === 'paper'){
+                    console.log('You WIN!'); }
+                    
+                } 
+        }
+// Step 5 : Test function in every possible combination. Check good.        
+
+// Step 6 : Creat a function called playgame() in order to log game results.
+
+function playGame(){
+    const userChoice = getUserChoice('rock');
+    const computerChoice = getComputerChoice();
+    console.log(`You shoot: ${userChoice}`);
+    console.log(`The computer shoots: ${computerChoice}`);
+    determineWinner(userChoice, computerChoice);
+  };
+
+playGame();
