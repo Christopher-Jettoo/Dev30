@@ -1,4 +1,4 @@
-const input = 'Aquaman got nothing on me';
+const input = 'aquaman got nothing on me';
 const vowels = ['a','e','i','o','u'];
 
 const resultArray = [];
